@@ -166,7 +166,7 @@ function selectRandom( array ) {
   return array[aleatorio];
 
 }
-console.log(selectRandom(weaponsArray));
+//console.log(selectRandom(weaponsArray));
 
 function pickMystery() {
   let sospechoso = selectRandom(suspectsArray);
@@ -182,14 +182,22 @@ function pickMystery() {
   return jugada;
 
 }
-
+//console.log(pickMystery());
 
 // ITERATION 3
 
-function revealMystery() {
-  
+function revealMystery( objeto ) {
+  let nombreSospechoso = objeto["suspect"].firstName;
+  let apellSospechoso = objeto["suspect"].lastName;
+  let habitacionEscogida = objeto["room"].name;
+  let armaEscogida = objeto["weapon"].name;
+
+    let resultado = `${nombreSospechoso} ${apellSospechoso} killed Mr. Boddy using the ${armaEscogida} in the ${habitacionEscogida}!`;
+
+  return resultado;
 }
 
+//console.log(revealMystery(pickMystery()));
 
 
 // The following is required to make unit tests work.
